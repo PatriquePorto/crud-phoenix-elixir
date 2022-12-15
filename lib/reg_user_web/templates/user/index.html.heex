@@ -1,0 +1,34 @@
+<div class="">
+
+    <h1>Usuários Listados</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th>Descrição</th>
+
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+    <%= for user <- @users do %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.description %></td>
+
+          <td>
+           <button> <span><%= link "Exibir", to: Routes.user_path(@conn, :show, user) %></span> </button>
+           <button> <span><%= link "Editar", to: Routes.user_path(@conn, :edit, user) %></span> </button>
+          <button class="delete"> <span><%= link "Deletar", to: Routes.user_path(@conn, :delete, user), method: :delete, data: [confirm: "Você tem certeza?"] %></span> </button> 
+          </td>
+        </tr>
+    <% end %>
+      </tbody>
+    </table>
+
+   <button class="new-user"><span><%= link "Novo Usuário", to: Routes.user_path(@conn, :new) %></span></button> 
+
+</div>
