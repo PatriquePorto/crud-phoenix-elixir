@@ -1,9 +1,9 @@
 <div class="">
 
-        <h1>Editar Usuário</h1>
+        <h1>Edit User</h1>
 
         <%= render "form.html", Map.put(assigns, :action, Routes.user_path(@conn, :update, @user)) %>
 
-        <span><%= link "Voltar", to: Routes.user_path(@conn, :index) %></span>
+        <span><%= link "Back", to: Routes.user_path(@conn, :index) %></span>
 
 </div>

@@ -18,7 +18,7 @@ defmodule RegUserWeb.UserController do
     case Users.create_user(user_params) do
       {:ok, user} ->
         conn
-        |> put_flash(:info, "Usuário criado com sucesso!")
+        |> put_flash(:info, "User created successfully!")
         |> redirect(to: Routes.user_path(conn, :show, user))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -43,7 +43,7 @@ defmodule RegUserWeb.UserController do
     case Users.update_user(user, user_params) do
       {:ok, user} ->
         conn
-        |> put_flash(:info, "Usuário atualizado com sucesso!")
+        |> put_flash(:info, "User updated successfully!")
         |> redirect(to: Routes.user_path(conn, :show, user))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -56,7 +56,7 @@ defmodule RegUserWeb.UserController do
     {:ok, _user} = Users.delete_user(user)
 
     conn
-    |> put_flash(:info, "Usuário deletado com sucesso!")
+    |> put_flash(:info, "User deleted successfully!")
     |> redirect(to: Routes.user_path(conn, :index))
   end
 end

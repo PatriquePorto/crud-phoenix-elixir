@@ -1,13 +1,13 @@
 <div class="">
 
-    <h1>Usuários Listados</h1>
+    <h1>Listed Users</h1>
 
     <table>
       <thead>
         <tr>
-          <th>Nome</th>
-          <th>E-mail</th>
-          <th>Descrição</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Description</th>
 
           <th></th>
         </tr>
@@ -20,15 +20,15 @@
           <td><%= user.description %></td>
 
           <td>
-           <button> <span><%= link "Exibir", to: Routes.user_path(@conn, :show, user) %></span> </button>
-           <button> <span><%= link "Editar", to: Routes.user_path(@conn, :edit, user) %></span> </button>
-          <button class="delete"> <span><%= link "Deletar", to: Routes.user_path(@conn, :delete, user), method: :delete, data: [confirm: "Você tem certeza?"] %></span> </button> 
+           <button> <span><%= link "Show", to: Routes.user_path(@conn, :show, user) %></span> </button>
+           <button> <span><%= link "Edit", to: Routes.user_path(@conn, :edit, user) %></span> </button>
+          <button class="delete"> <span><%= link "Delete", to: Routes.user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"] %></span> </button> 
           </td>
         </tr>
     <% end %>
       </tbody>
     </table>
 
-   <button class="new-user"><span><%= link "Novo Usuário", to: Routes.user_path(@conn, :new) %></span></button> 
+   <button class="new-user"><span><%= link "New user", to: Routes.user_path(@conn, :new) %></span></button> 
 
 </div>

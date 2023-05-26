@@ -3,8 +3,7 @@ import Config
 # Configure your database
 config :reg_user, RegUser.Repo,
   username: "postgres",
-  password: "123456",
-  port: 7888,
+  password: "postgres123",
   hostname: "localhost",
   database: "reg_user_dev",
   stacktrace: true,
